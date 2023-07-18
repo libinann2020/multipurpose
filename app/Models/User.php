@@ -48,9 +48,9 @@ class User extends Authenticatable
     protected $appends = [
         'formatted_created_at',
     ];
-    
+
     public function getFormattedCreatedAtAttribute() {
-        return $this->created_at->format(config('app.date_format'));
+        return $this->created_at->format(setting('date_format'));
     }
 
     public function role(): Attribute {

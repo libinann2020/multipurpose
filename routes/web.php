@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\AppointmentStatusController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\DashboardStatController;
+use App\Http\Controllers\Admin\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/api/appointment-status', [AppointmentStatusController::class, 'getStatusWithCount']);
 
     Route::get('/api/clients', [ClientController::class, 'index']);
+
+    Route::get('/api/settings', [SettingController::class, 'index']);
+    Route::post('/api/settings', [SettingController::class, 'update']);
 });
 
 

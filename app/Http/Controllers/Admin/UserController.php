@@ -14,7 +14,7 @@ class UserController extends Controller
                     $query->where('name', 'like', "%{$searchQuery}%");
                 })
                 ->latest()
-                ->paginate();
+                ->paginate(setting('pagination_limit'));
         // $users = User::latest()->paginate(5);
         // ->map(function($user) {
         //     return [
